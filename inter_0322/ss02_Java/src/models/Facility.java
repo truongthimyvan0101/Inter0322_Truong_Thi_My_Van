@@ -1,6 +1,6 @@
 package models;
 
-public abstract class Facility {
+public class Facility {
     private String id;
     private String name;
     private double areaUse;
@@ -8,7 +8,7 @@ public abstract class Facility {
     private int peopleMax;
     private String styleRental;
 
-    public Facility() {
+    public Facility(String id, String name, double area, int price, int people, String rentType, String standard, Double areaPool, int floor) {
     }
 
     public Facility(String idFacility, String nameService, double areaUse, int rentalPrice, int peopleMax, String styleRental) {

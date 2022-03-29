@@ -2,25 +2,17 @@ package models;
 
 import java.io.Serializable;
 
-public class Villa extends Facility implements Serializable {
+public class Villa extends Facility {
     private String standardVilla;
     private double areaPool;
     private int floor;
 
-    public Villa() {
+    public Villa(String id, String name, double area, int price, int people, String rentType, String standard, Double areaPool, int floor) {
+        super(id, name, area, price, people, rentType, standard, areaPool, floor);
     }
 
-    public Villa(String standardVilla, double areaPool, int floor) {
-        this.standardVilla = standardVilla;
-        this.areaPool = areaPool;
-        this.floor = floor;
-    }
-
-    public Villa(String idFacility, String nameService, double areaUse, int rentalPrice, int peopleMax, String styleRental, String standardVilla, double areaPool, int floor) {
+    public Villa(String idFacility, String nameService, double areaUse, int rentalPrice, int peopleMax, String styleRental) {
         super(idFacility, nameService, areaUse, rentalPrice, peopleMax, styleRental);
-        this.standardVilla = standardVilla;
-        this.areaPool = areaPool;
-        this.floor = floor;
     }
 
     public String getStandardVilla() {
@@ -43,9 +35,7 @@ public class Villa extends Facility implements Serializable {
         return floor;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
-    }
+    public void setFloor(int floor) {}
 
     @Override
     public String toString() {
@@ -53,6 +43,6 @@ public class Villa extends Facility implements Serializable {
                 "standardVilla='" + standardVilla + '\'' +
                 ", areaPool=" + areaPool +
                 ", floor=" + floor +
-                "} " + super.toString();
+                '}';
     }
 }
